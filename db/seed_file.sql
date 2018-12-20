@@ -6,7 +6,7 @@ create table departments(
 create table items(
     id serial primary key,
     department integer,
-    description integer,
+    description text,
     image text,
     price numeric(10,2),
     additional_details text

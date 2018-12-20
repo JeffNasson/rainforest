@@ -51,10 +51,27 @@ module.exports = {
     //end auth points
     
     //departments and items
-    displayAllDepartments:(req,res)=>{},
-    displayDepartment:(req,res)=>{},
+    displayAllDepartments:async (req,res)=>{
+        const db = req.app.get('db')
+        // const all = req.params
+
+        let allDepartments = await db.get_departments()
+            .then(allDepartments=>res.status(200).send(allDepartments))
+            .catch(err=>console.log(err))
+
+    },
+    displayDepartment:(req,res)=>{
+        const db = req.app.get('db')
+        const {id} = req.params
+
+        db.get_department([id])
+            .then(department=>res.status(200).send(department))
+            .catch(err=>console.log(err))
+    },
     displayAllItems:(req,res)=>{},
-    displayItem:(req,res)=>{},
+    displayItem:(req,res)=>{
+        
+    },
     //end departments and items
 
     //cart
