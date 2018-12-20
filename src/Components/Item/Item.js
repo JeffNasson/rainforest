@@ -22,7 +22,10 @@ class Item extends Component{
     addToCart(){
         let quantity = this.state.quantity
         let id = this.props.match.params.id
-        axios.put
+        axios.post(`/api/cart/${id}/${quantity}`)
+             .then(res=>{
+                 this.setState({cart:res.data})
+             })
     }
 
     render(){
