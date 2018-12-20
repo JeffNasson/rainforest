@@ -70,11 +70,17 @@ module.exports = {
     },
     displayAllItems:(req,res)=>{},
     displayItem:(req,res)=>{
-        
+        const db = req.app.get('db');
+        const {id}= req.params
+
+        db.get_item([id])
+            .then(item=>res.status(200).send(item))
+            .catch(err=>console.log(err))
     },
     //end departments and items
 
     //cart
+    displayCart:(req,res)=>{},
     addToCart:(req,res)=>{},
     removeFromCart:(req,res)=>{},
     //end cart

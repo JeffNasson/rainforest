@@ -33,10 +33,13 @@ app.get(`/api/user-info`, ctrl.userInfo) //user info
 app.get(`/api/departments`, ctrl.displayAllDepartments) //get all departments
 app.get(`/api/departments/:id`, ctrl.displayDepartment) //get 1 department
 app.get(`/api/items`, ctrl.displayAllItems) //get all items
-app.get(`/api/items/:id`,ctrl.displayItem) //get single
+app.get(`/api/items/:id`,ctrl.displayItem) //get single item
 //end departments and items
 
 //cart 
+app.get(`/api/cart`,ctrl.displayCart)
+app.post(`/api/cart/:id/:quantity`,ctrl.addToCart)
+app.delete(`/api/cart/:itemId`,ctrl.removeFromCart)
 //end cart 
 
 //checkout, orders
