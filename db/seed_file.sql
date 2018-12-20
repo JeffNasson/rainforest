@@ -19,7 +19,8 @@ create table users(
     first_name varchar(20) not null,
     last_name varchar(20) not null,
     email text not null,
-    phone_number integer not null
+    phone_number char(10),
+    zipcode char(5)
 );
 
 create table checkout(

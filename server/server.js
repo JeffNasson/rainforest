@@ -6,7 +6,7 @@ const ctrl = require('./controller.js')
 
 let {SERVER_PORT,CONNECTION_STRING,SESSION_SECRET} = process.env;
 
-const app = express
+const app = express();
 app.use(express.static(__dirname+'/../build'))
 app.use(express.json())
 
@@ -22,11 +22,12 @@ massive(CONNECTION_STRING).then(db=>{
 })
 
 
-//Login and logout functions
+//Login, logout, register, and user info functions
 app.post(`/api/register`,ctrl.register) //register
 app.post(`/api/login`,ctrl.login) //login
 app.post(`/api/logout`, ctrl.logout) //logout
-//end Login and logout functions
+app.get(`/api/user-info`, ctrl.userInfo) //user info
+//end Login, logout, register, and user info functions
 
 //departments and items
 app.get(`/api/departments`, ctrl.displayAllDepartments) //get all departments
