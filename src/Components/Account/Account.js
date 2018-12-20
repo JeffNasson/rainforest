@@ -19,6 +19,7 @@ class Account extends Component{
     logout(){
         axios.post('/api/logout')
              .then(res=>{
+                 this.props.updateCustomer({})
                  this.props.history.push('/')
              })
     }
