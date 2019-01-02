@@ -5,7 +5,7 @@ module.exports = {
     //auth points
     register:async (req,res)=>{
         const db = req.app.get('db')
-        let {username,password,firstName,lastName,email,phone,zipcode} = req.body
+        let {username,password,firstName,lastName,email,phone,zipcode,city} = req.body
 
         let user = await db.find_user(username)
         if(user[0]){
@@ -14,9 +14,9 @@ module.exports = {
             let salt = bcrypt.genSaltSync(10);
             let hash = bcrypt.hashSync(password,salt);
 
-            let createdUser = await db.register_user([username,hash,firstName,lastName,email,phone,zipcode])
+            let createdUser = await db.register_user([username,hash,firstName,lastName,email,phone,zipcode,city])
             console.log(createdUser)
-            req.session.user = {username:createdUser[0].username, firstName:createdUser[0].firstName, lastName:createdUser[0].lastName, email: createdUser[0].email, phone: createdUser[0].phone, zipcode:createdUser[0].zipcode, id:createdUser[0].id}
+            req.session.user = {username:createdUser[0].username, firstName:createdUser[0].firstName, lastName:createdUser[0].lastName, email: createdUser[0].email, phone: createdUser[0].phone, zipcode:createdUser[0].zipcode, id:createdUser[0].id, city:createdUser[0].city}
             res.status(200).send({loggedIn: true, message: 'Login Successful'})
         }
     },
@@ -31,7 +31,7 @@ module.exports = {
         let result = bcrypt.compareSync(password,user[0].password)
         console.log(result)
         if(result){
-            req.session.user = {username: user[0].username, id: user[0].id, firstName: user[0].first_name, lastName: user[0].last_name, email: user[0].email, phone: user[0].phone_number, zipcode:user[0].zipcode }
+            req.session.user = {username: user[0].username, id: user[0].id, firstName: user[0].first_name, lastName: user[0].last_name, email: user[0].email, phone: user[0].phone_number, zipcode:user[0].zipcode, city:user[0].city }
             return res.status(200).send({loggedIn: true, message: 'log in successful', })
         } else {
             return res.status(401).send({loggedIn: false, message: 'incorrect password.'})
@@ -80,8 +80,48 @@ module.exports = {
     //end departments and items
 
     //cart
-    displayCart:(req,res)=>{},
-    addToCart:(req,res)=>{},
+    displayCart: async(req,res)=>{
+        const db = req.app.get('db')
+        const user = req.session.user
+
+        if(user){
+            let showCart = await db.get_cart([user.id])
+            res.status(200).send(showCart)
+        } else{
+            res.status(401).send(console.log('user not found'))
+        }
+    },
+    addToCart: async(req,res)=>{
+        const db = req.app.get('db');
+        const {id,quantity} = req.params;
+        const user = req.session.user;
+        console.log(user)
+        if(user){
+            const isInCart= await db.select_cart([user.id,id])
+            if(isInCart.length){
+                let cart = await db.update_quantity([Number(quantity)+1,id,user.id])
+                res.status(200).send(cart)
+            } else{
+                let usersCart = await db.add_to_cart([user.id,id,quantity])
+            res.status(200).send(usersCart)
+            }
+        } else {
+            res.status(401).send('user not found, please log in')
+        } 
+
+    },
+    editCartQuantity: async(req,res)=>{
+        const db = req.app.get('db');
+        const {itemId,newQuantity} = req.params
+        const user = req.session.user
+        if(user){
+            const isInCart = await db.select_cart([user.id,itemId])
+            if(isInCart){
+                let cart = await db.update_quantity([Number(newQuantity),itemId,user.id])
+                res.status(200).send(cart)
+            }
+        }
+    },
     removeFromCart:(req,res)=>{},
     //end cart
 

@@ -7,6 +7,7 @@ import Register from './Components/Auth/Register/Register.js';
 import Account from './Components/Account/Account.js';
 import Departments from './Components/Departments/Departments.js';
 import Item from './Components/Item/Item.js';
+import Cart from './Components/Cart/Cart.js';
 
 export default(
     <Switch>
@@ -16,5 +17,6 @@ export default(
         <Route path='/account' component={Account} />
         <Route path='/departments' component={Departments} />
         <Route path='/item/:id' component={Item} />
+        <Route path='/cart' component={Cart} />
     </Switch>
 )

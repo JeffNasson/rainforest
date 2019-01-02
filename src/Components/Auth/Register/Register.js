@@ -11,7 +11,8 @@ class Register extends Component{
             lastName:'',
             email:'',
             phone:null,
-            zipcode:null
+            zipcode:null,
+            city:''
         }
         this.newEmail=this.newEmail.bind(this);
         this.newUsername=this.newUsername.bind(this);
@@ -20,12 +21,13 @@ class Register extends Component{
         this.newPhone=this.newPhone.bind(this);
         this.newPassword=this.newPassword.bind(this);
         this.newZipcode=this.newZipcode.bind(this);
+        this.newCity=this.newCity.bind(this);
         this.registerUser=this.registerUser.bind(this);
     }
     
     registerUser(){
-        let {username,password,firstName,lastName,email,phone,zipcode} = this.state
-        axios.post(`/api/register`,{username,password,firstName,lastName,email,phone,zipcode})
+        let {username,password,firstName,lastName,email,phone,zipcode,city} = this.state
+        axios.post(`/api/register`,{username,password,firstName,lastName,email,phone,zipcode,city})
              .then(res=>{
                  alert('Successfully Registered!') 
                  this.props.history.push('/')
@@ -53,6 +55,9 @@ class Register extends Component{
     newZipcode(val){
         this.setState({zipcode:val})
     }
+    newCity(val){
+        this.setState({city:val})
+    }
 
     render(){
         return(
@@ -62,6 +67,7 @@ class Register extends Component{
                 <input type='password' placeholder='Password' value={this.state.password} onChange={(e)=>this.newPassword(e.target.value)} />
                 <input type='text' placeholder='First Name' value={this.state.firstName} onChange={(e)=>this.newFirstName(e.target.value)} />
                 <input type='text' placeholder='Last Name' value={this.state.lastName} onChange={(e)=>this.newLastName(e.target.value)} />
+                <input type='text' placeholder='city' value={this.state.city} onChange={(e)=>this.newCity(e.target.value)} />
                 <input type='text' placeholder='5 Digit Zipcode' maxLength='5' value={this.state.zipcode} onChange={(e)=>this.newZipcode(e.target.value)} />
                 <input type='email' placeholder='Email' value={this.state.email} onChange={(e)=>this.newEmail(e.target.value)} />
                 <input type='tel' placeholder='10 Digit Phone Number' id='phone' name='tel' maxLength='10' pattern='[0-9]{3}-[0-9]{3}-[0-9]{4}'required value={this.state.phone} onChange={(e)=>this.newPhone(e.target.value)} />

@@ -9,6 +9,7 @@ class Item extends Component{
             cart:[],
             quantity:1
         }
+        this.addToCart=this.addToCart.bind(this);
     }
 
     componentDidMount(){
@@ -24,19 +25,31 @@ class Item extends Component{
         let id = this.props.match.params.id
         axios.post(`/api/cart/${id}/${quantity}`)
              .then(res=>{
-                 this.setState({cart:res.data})
+                 if(res.status==200){
+                     this.setState({cart:res.data})
+                    } else {
+                        alert('Not logged in, sending you to login.')
+                        this.props.history.push('/auth')
+                 }
+                 console.log(this.state.cart)
+                 console.log(res)
+
+                //  if(res.headers.status=401){
+                //     alert('No user session found. Please login')
+                //  }
              })
     }
 
     render(){
         let itemDisplay = this.state.item.map((item,i)=>{
-            console.log(item)
+            // console.log(item)
             return(
                 <div className='item-display' key={i}>
                     <div>{item.description}</div>
                     <img src={item.image} />
                    <div>{item.additional_details}</div> 
                     <div>{item.price}</div>
+                    <button className='add-to-cart' onClick={this.addToCart}>Add To Cart</button>
                 </div>
             )
         })
