@@ -6,7 +6,8 @@ class Cart extends Component{
     constructor(props){
         super(props)
         this.state={
-            cart:[]
+            cart:[],
+            total:0
         }
         this.updateCartQuantity=this.updateCartQuantity.bind(this);
         this.quantityMinusOne=this.quantityMinusOne.bind(this);
@@ -17,10 +18,14 @@ class Cart extends Component{
     componentDidMount(){
         axios.get(`/api/cart`)
              .then(res=>{
-                console.log(res.data)
+                // console.log(res.data)
                 this.setState({cart:res.data})
-                console.log(this.state.cart)
+                // console.log(this.state.cart)
             })
+        axios.get(`/api/cart/total`)
+             .then(res=>{
+                 this.setState({total:res.data[0].total_price})
+             })
     }
 
     updateCartQuantity(itemId,newQuantity){
@@ -50,6 +55,13 @@ class Cart extends Component{
              })
     }
 
+    totalPrice(){
+        axios.get(`/api/cart/total`)
+             .then(res=>{
+                 this.setState({total:res.data})
+             })
+    }
+
     render(){
 
         let displayCart=this.state.cart.map((item)=>{
@@ -62,6 +74,7 @@ class Cart extends Component{
                 CART
 
                 {displayCart}
+                {this.state.total}
 
             </div>
         )

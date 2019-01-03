@@ -38,6 +38,7 @@ app.get(`/api/items/:id`,ctrl.displayItem) //get single item
 
 //cart 
 app.get(`/api/cart`,ctrl.displayCart)
+app.get('/api/cart/total',ctrl.cartTotal)
 app.post(`/api/cart/:id/:quantity`,ctrl.addToCart)
 app.put(`/api/cart/:itemId/:newQuantity`,ctrl.editCartQuantity)
 app.put(`/api/cartminus/:itemId/:newQuantity`,ctrl.minusOne)
@@ -46,6 +47,7 @@ app.delete(`/api/cart/:itemId`,ctrl.removeFromCart)
 //end cart 
 
 //checkout, orders
+app.post(`/api/checkout`,ctrl.checkout)
 //checkout, orders
 
 

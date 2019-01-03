@@ -9,7 +9,7 @@ class CartItem extends Component{
     render(){
         let {description,image,additional_details,quantity,price,name,id} = this.props.item
         let {updateCartQuantity,quantityPlusOne,quantityMinusOne,deleteFromCart} = this.props
-        console.log({quantity})
+        // console.log({quantity})
         return(
             <div className='cart-users-cart' key={id}>
                     <div>{description}</div>

@@ -180,10 +180,34 @@ module.exports = {
             res.status(401).send(console.log('user not found, please log in'))
         }
     },
+    cartTotal:async(req,res)=>{
+        const db = req.app.get('db')
+        const user = req.session.user
+
+        if(user){
+            let cartTotal = await db.cart_total(user.id)
+            console.log(cartTotal)
+            res.status(200).send(cartTotal)
+        } else {
+            res.status(401).send(console.log('no cart total found'))
+        }
+    },
     //end cart
 
     //checkout, orders
-    checkout:(req,res)=>{},
+    checkout:async(req,res)=>{
+        const db=req.app.get('db')
+        const {itemId,totalPrice} = req.params
+        const user = req.session.user
+
+        if(user){
+            let checkout = await db.add_to_orders(user.id)
+            console.log(checkout)
+            res.status(200).send(checkout)
+        } else {
+            res.status(401).send(console.log('checkout failed'))
+        }
+    },
     completedOrders:(req,res)=>{},
     //end checkout, orders
 }

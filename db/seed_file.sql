@@ -98,4 +98,9 @@ create table cart(
 
 --add to cart:
 	insert into cart(user_id,item_id,quantity)
-    values ($1,$2,$3)
+    values ($1,$2,$3);
+
+--cart total
+select sum(price*quantity) as total
+from cart join items i on cart.item_id=i.id
+where user_id=$1;
