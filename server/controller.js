@@ -112,17 +112,74 @@ module.exports = {
     },
     editCartQuantity: async(req,res)=>{
         const db = req.app.get('db');
-        const {itemId,newQuantity} = req.params
-        const user = req.session.user
+        const {itemId,newQuantity} = req.params;
+        const user = req.session.user;
+        console.log(req.params)
         if(user){
             const isInCart = await db.select_cart([user.id,itemId])
             if(isInCart){
                 let cart = await db.update_quantity([Number(newQuantity),itemId,user.id])
                 res.status(200).send(cart)
+            } else {
+                res.status(401).send(`user not found, please log in`)
             }
         }
     },
-    removeFromCart:(req,res)=>{},
+    minusOne: async (req,res)=>{
+        const db = req.app.get('db');
+        const {itemId,newQuantity} = req.params;
+        const user = req.session.user
+        if(user){
+            const isInCart = await db.select_cart([user.id,itemId])
+            if(isInCart){
+                let cart = await db.minus_one([Number(newQuantity),itemId,user.id])
+                if(newQuantity<=0){
+                    let deleteFromCart = await db.delete_item(itemId,user.id)
+                    res.status(200).send(deleteFromCart)
+                } else {
+                    res.status(200).send(cart)
+                }
+            } else {
+                res.status(401).send(`item or user not found, please try again`)
+            }
+        }
+    },
+    plusOne:async (req,res)=>{
+        const db = req.app.get('db');
+        const {itemId,newQuantity} = req.params;
+        const user = req.session.user
+        if(user){
+            const isInCart = await db.select_cart([user.id,itemId])
+            if(isInCart){
+                let cart = await db.plus_one([Number(newQuantity),itemId,user.id])
+                if(newQuantity<=0){
+                    let deleteFromCart = await db.delete_item(itemId,user.id)
+                    res.status(200).send(deleteFromCart)
+                } else {
+                    res.status(200).send(cart)
+                }
+            }
+        } else {
+            res.status(401).send(console.log(`item or user not found, please try again`))
+        }
+    },
+    removeFromCart:async (req,res)=>{
+        const db = req.app.get('db')
+        const {itemId}=req.params
+        const user = req.session.user
+
+        if(user){
+            const isInCart = await db.select_cart([user.id,itemId])
+            if(isInCart){
+                let deleteFromCart = await db.delete_item(itemId,user.id)
+                res.status(200).send(deleteFromCart)
+            } else {
+                res.status(401).send(console.log('item not found'))
+            }
+        } else {
+            res.status(401).send(console.log('user not found, please log in'))
+        }
+    },
     //end cart
 
     //checkout, orders

@@ -40,6 +40,8 @@ app.get(`/api/items/:id`,ctrl.displayItem) //get single item
 app.get(`/api/cart`,ctrl.displayCart)
 app.post(`/api/cart/:id/:quantity`,ctrl.addToCart)
 app.put(`/api/cart/:itemId/:newQuantity`,ctrl.editCartQuantity)
+app.put(`/api/cartminus/:itemId/:newQuantity`,ctrl.minusOne)
+app.put(`/api/cartplus/:itemId/:newQuantity`,ctrl.plusOne)
 app.delete(`/api/cart/:itemId`,ctrl.removeFromCart)
 //end cart 
 

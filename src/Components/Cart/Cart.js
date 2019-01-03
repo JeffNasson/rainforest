@@ -9,6 +9,9 @@ class Cart extends Component{
             cart:[]
         }
         this.updateCartQuantity=this.updateCartQuantity.bind(this);
+        this.quantityMinusOne=this.quantityMinusOne.bind(this);
+        this.quantityPlusOne=this.quantityPlusOne.bind(this);
+        this.deleteFromCart=this.deleteFromCart.bind(this);
     }
 
     componentDidMount(){
@@ -27,11 +30,31 @@ class Cart extends Component{
              })
     }
 
+    quantityMinusOne(itemId,newQuantity){
+        axios.put(`/api/cartminus/${itemId}/${newQuantity}`)
+             .then(res=>{
+                 this.setState({cart:res.data})
+             })
+    }
+    quantityPlusOne(itemId,newQuantity){
+        axios.put(`/api/cartplus/${itemId}/${newQuantity}`)
+             .then(res=>{
+                 this.setState({cart:res.data})
+             })
+    }
+
+    deleteFromCart(itemId){
+        axios.delete(`/api/cart/${itemId}`)
+             .then(res=>{
+                 this.setState({cart:res.data})
+             })
+    }
+
     render(){
 
         let displayCart=this.state.cart.map((item)=>{
             return(
-                <CartItem item={item} updateCartQuantity={this.updateCartQuantity} />
+                <CartItem item={item} updateCartQuantity={this.updateCartQuantity} quantityPlusOne={this.quantityPlusOne} quantityMinusOne={this.quantityMinusOne} deleteFromCart={this.deleteFromCart} />
             )
         })
         return(
