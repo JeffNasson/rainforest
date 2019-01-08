@@ -1,1 +1,9 @@
 $font-sans: 'Open Sans', sans-serif;
+$color-black: #232f3e;
+$color-dark-grey:#37475a;
+@mixin flexo($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-contents: $justify;
+    align-items: $align;
+  }

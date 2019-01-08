@@ -1,6 +1,9 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Header from '../Header/Header.js';
+import Searchbar from '../Searchbar/Searchbar.js';
+import SubHeader from '../SubHeader/SubHeader.js';
 
 class Departments extends Component{
     constructor(props){
@@ -52,6 +55,9 @@ class Departments extends Component{
 
         return(
             <div className='departments-parent'>
+                <Header />
+                <Searchbar />
+                <SubHeader />
                 Departments
                 {departmentsToDisplay}
                 {displayOneDepartment}

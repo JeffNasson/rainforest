@@ -3,6 +3,9 @@ import axios from 'axios';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {updateCustomer} from '../../dux/reducer.js';
+import Header from '../Header/Header.js';
+import Searchbar from '../Searchbar/Searchbar.js';
+import SubHeader from '../SubHeader/SubHeader.js';
 
 class Account extends Component{
     constructor(props){
@@ -29,6 +32,9 @@ class Account extends Component{
         console.log(customer)
         return(
             <div className='account-parent'>
+            <Header />
+            <Searchbar />
+            <SubHeader />
                 {
                     customer.id ? (
                         <div className='account-customer-truthy'>

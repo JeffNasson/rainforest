@@ -1,6 +1,10 @@
 import React,{Component} from 'react';
 import axios from 'axios';
 import CartItem from './CartItem.js';
+import Header from '../Header/Header.js';
+import Searchbar from '../Searchbar/Searchbar.js';
+import {Link} from 'react-router-dom';
+import SubHeader from '../SubHeader/SubHeader.js';
 
 class Cart extends Component{
     constructor(props){
@@ -71,10 +75,14 @@ class Cart extends Component{
         })
         return(
             <div className='cart-parent'>
+                <Header />
+                <Searchbar />
+                <SubHeader />
                 CART
 
                 {displayCart}
-                {this.state.total}
+                Total: ${this.state.total}
+                <Link to='/checkout'><button>Checkout</button></Link>
 
             </div>
         )

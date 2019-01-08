@@ -1,5 +1,9 @@
 import React,{Component} from 'react';
 import axios from 'axios';
+import {Link} from 'react-router-dom';
+import Header from '../Header/Header.js';
+import Searchbar from '../Searchbar/Searchbar.js';
+import SubHeader from '../SubHeader/SubHeader.js';
 
 class Item extends Component{
     constructor(props){
@@ -55,7 +59,11 @@ class Item extends Component{
         })
         return(
             <div className='item-parent'>
+                <Header />
+                <Searchbar />
+                <SubHeader />
                 {itemDisplay}
+                <Link to='/checkout'><button>Checkout</button></Link>
             </div>
         )
     }
