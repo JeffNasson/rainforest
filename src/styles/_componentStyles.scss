@@ -175,6 +175,19 @@
 }
 //END SEARCHBAR
 
+//BEGIN SEARCHPAGE
+.searchpage-item{
+    padding-bottom: 2em;
+    text-decoration: none;
+    text-underline-position: unset;
+}
+.searchpage-item img{
+    width: 12em;
+}
+.searchpage-item h2{}
+.searchpage-item h4{}
+//END SEARCHPAGE
+
 //BEGIN SUBHEADER
 .subheader-parent{
     height:2em;

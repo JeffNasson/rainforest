@@ -9,6 +9,7 @@ import Departments from './Components/Departments/Departments.js';
 import Item from './Components/Item/Item.js';
 import Cart from './Components/Cart/Cart.js';
 import Checkout from './Components/Checkout/Checkout.js';
+import SearchPage from './Components/SearchPage/SearchPage.js';
 
 export default(
     <Switch>
@@ -20,5 +21,6 @@ export default(
         <Route path='/item/:id' component={Item} />
         <Route path='/cart' component={Cart} />
         <Route path='/checkout' component={Checkout} />
+        <Route path='/search' component={SearchPage} />
     </Switch>
 )

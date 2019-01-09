@@ -179,6 +179,14 @@ table {
   width: 1.5em;
   background-color: orange; }
 
+.searchpage-item {
+  padding-bottom: 2em;
+  text-decoration: none;
+  text-underline-position: unset; }
+
+.searchpage-item img {
+  width: 12em; }
+
 .subheader-parent {
   height: 2em;
   width: 100%;

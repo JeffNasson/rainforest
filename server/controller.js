@@ -77,6 +77,14 @@ module.exports = {
             .then(item=>res.status(200).send(item))
             .catch(err=>console.log(err))
     },
+    searchItems: async(req,res)=>{
+        const db = req.app.get('db');
+        const {searchText} = req.params
+
+        let itemSearch = await db.item_search([`%${searchText}%`])
+            .then(itemSearch=>res.status(200).send(itemSearch))
+            .catch(err=>console.log(err))
+    },
     //end departments and items
 
     //cart
