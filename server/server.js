@@ -7,7 +7,11 @@ const ctrl = require('./controller.js')
 let {SERVER_PORT,CONNECTION_STRING,SESSION_SECRET} = process.env;
 
 const app = express();
-app.use(express.static(__dirname+'/../build'))
+const path = require('path'); // Usually moved to the start of file
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 app.use(express.json())
 
 app.use(session({

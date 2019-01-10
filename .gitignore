@@ -26,3 +26,4 @@ yarn-error.log*
 .ENV
 dotenv
 DOTENV
+.env.prod
