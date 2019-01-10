@@ -32,11 +32,13 @@ class Departments extends Component{
 
     render(){
         let departmentsToDisplay = this.state.departments.map((departments,i)=>{
-            // console.log(departments)
+            console.log(departments)
             return(
+                <Link to={`/departments/${departments.department_name}`} key={i}>
                 <div className='departments-to-display' key={i}>
                     <button onClick={()=>this.displayDepartment(departments.id)}>{departments.department_name}</button>
                 </div>
+                </Link>
             )
         })
 
@@ -58,7 +60,10 @@ class Departments extends Component{
                 <Header />
                 <Searchbar />
                 <SubHeader />
-                Departments
+                <div className='auth-h1-hr'>
+                    <h1>Departments</h1>
+                    <hr />
+                </div>
                 {departmentsToDisplay}
                 {displayOneDepartment}
             </div>

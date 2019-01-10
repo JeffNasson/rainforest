@@ -1,6 +1,11 @@
 $font-sans: 'Open Sans', sans-serif;
+$font-amz: 'Amazon Ember',Arial,sans-serif;
 $color-black: #232f3e;
 $color-dark-grey:#37475a;
+$color-yellow:#f0c14b;
+$color-red:#B12704;
+$button-black: #111;
+$yellow-border: #a88734 #9c7e31 #846a29;
 @mixin flexo($direction: row, $justify: center, $align: center) {
     display: flex;
     flex-direction: $direction;

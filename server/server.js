@@ -36,6 +36,7 @@ app.get(`/api/items`, ctrl.displayAllItems) //get all items
 app.get(`/api/items/:id`,ctrl.displayItem) //get single item
 //end departments and items
 app.get(`/api/itemsearch/:searchText`,ctrl.searchItems) //search bar functionality
+app.get(`/api/tenitems`,ctrl.getTenItems) //get ten items for home page
 //cart 
 app.get(`/api/cart`,ctrl.displayCart)
 app.get('/api/cart/total',ctrl.cartTotal)

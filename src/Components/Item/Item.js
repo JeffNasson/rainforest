@@ -49,11 +49,12 @@ class Item extends Component{
             // console.log(item)
             return(
                 <div className='item-display' key={i}>
-                    <div>{item.description}</div>
+                    <div><h2>{item.description}</h2></div>
                     <img src={item.image} />
-                   <div>{item.additional_details}</div> 
-                    <div>{item.price}</div>
+                   <div><h3>{item.additional_details}</h3></div> 
+                    <div><h4>${item.price}</h4></div>
                     <button className='add-to-cart' onClick={this.addToCart}>Add To Cart</button>
+                    <Link to='/cart'><button className='item-checkout-button'>My Cart</button></Link>
                 </div>
             )
         })
@@ -63,7 +64,6 @@ class Item extends Component{
                 <Searchbar />
                 <SubHeader />
                 {itemDisplay}
-                <Link to='/checkout'><button>Checkout</button></Link>
             </div>
         )
     }
