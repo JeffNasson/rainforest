@@ -79,6 +79,10 @@ class Cart extends Component{
                 <Header />
                 <Searchbar />
                 <SubHeader />
+                <div className='auth-h1-hr'>
+                    <h1>Cart</h1>
+                    <hr />
+                </div>
 
                 {displayCart}
                 {
