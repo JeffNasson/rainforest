@@ -45,6 +45,7 @@ class Account extends Component{
                             <div><h4>Phone:</h4> <h2>{customer.phone}</h2></div>
                             <div><h4>City:</h4> <h2>{customer.city}</h2></div>
                             <div><h4>Zip:</h4> <h2>{customer.zipcode}</h2></div>
+                            <Link to='/'><button>Home</button></Link>
                             <button onClick={this.logout}>Logout</button>
                         </div>
                     ) : (
