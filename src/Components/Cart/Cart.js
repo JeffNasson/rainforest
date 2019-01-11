@@ -3,8 +3,8 @@ import axios from 'axios';
 import CartItem from './CartItem.js';
 import Header from '../Header/Header.js';
 import Searchbar from '../Searchbar/Searchbar.js';
-import {Link} from 'react-router-dom';
 import SubHeader from '../SubHeader/SubHeader.js';
+import {Link} from 'react-router-dom';
 
 class Cart extends Component{
     constructor(props){
@@ -73,16 +73,27 @@ class Cart extends Component{
                 <CartItem item={item} updateCartQuantity={this.updateCartQuantity} quantityPlusOne={this.quantityPlusOne} quantityMinusOne={this.quantityMinusOne} deleteFromCart={this.deleteFromCart} />
             )
         })
+
         return(
             <div className='cart-parent'>
                 <Header />
                 <Searchbar />
                 <SubHeader />
-                CART
 
                 {displayCart}
-                Total: ${this.state.total}
-                <Link to='/checkout'><button>Checkout</button></Link>
+                {
+                    this.state.cart==0 ?(
+                        <div className='searchpage-item'>
+                            <h2>Oops its like your cart is empty! Log in and get to shopping!</h2>
+                        </div>
+                    ):(
+                        <div className='searchpage-item'>
+                        <h2>Cart Total:</h2> <h4>${this.state.total}</h4>
+                        <Link to='/checkout'><button>Checkout</button></Link>
+                        </div>
+                    )
+                }
+                {/* Total: ${this.state.total} */}
 
             </div>
         )

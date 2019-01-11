@@ -104,3 +104,10 @@ create table cart(
 select sum(price*quantity) as total
 from cart join items i on cart.item_id=i.id
 where user_id=$1;
+
+--get Orders
+select * 
+from checkout c
+join items i
+on c.item_id = i.id
+where c.user_id=$1;

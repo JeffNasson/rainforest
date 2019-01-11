@@ -62,7 +62,7 @@ class Header extends Component{
                                 <div className='header-slide-content-top-buttons'>
                                    <Link to='/account'><button>Account</button></Link>
                                     <Link to='/cart'><button>Cart</button> </Link>
-                                    <button>Orders</button>
+                                   <Link to='/orders'><button>Orders</button></Link>
                                 </div>
                                 <div className='header-slide-content-body'>
                                     <Link to='/'><button>Home</button></Link>

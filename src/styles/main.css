@@ -56,6 +56,53 @@ table {
 .body {
   font-family: "Amazon Ember", Arial, sans-serif; }
 
+.account-customer-truthy div {
+  display: flex;
+  justify-content: center;
+  padding-top: .4em;
+  padding-bottom: .3em; }
+
+.account-customer-truthy h2 {
+  padding-left: .3em;
+  color: #232f3e;
+  font-weight: 600;
+  font-size: 1.3em; }
+
+.account-customer-truthy h4 {
+  font-weight: 500;
+  color: #37475a;
+  font-size: 1.3em; }
+
+.account-customer-truthy button {
+  width: 70%;
+  margin-top: .2em;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  height: 2em;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 1.2em;
+  border-radius: .2em; }
+
+.account-customer-falsy button {
+  width: 70%;
+  margin-top: .2em;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  height: 2em;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 1.2em;
+  border-radius: .2em; }
+
+.account-customer-falsy h2 {
+  padding-left: .3em;
+  color: #232f3e;
+  font-weight: 600;
+  font-size: 1.3em;
+  padding-top: .4em;
+  padding-bottom: .3em; }
+
 .auth-h1-hr h1 {
   color: #37475a;
   display: flex;
@@ -113,6 +160,39 @@ table {
   font-size: 1.2em;
   border-radius: .2em; }
 
+.searchpage-item button {
+  margin-top: .2em;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  height: 2em;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 1.2em;
+  border-radius: .2em;
+  margin-bottom: .2em; }
+
+.cart-item-minus-button {
+  margin-top: .2em;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  width: 2em;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 1.2em;
+  border-radius: .2em;
+  margin-bottom: .2em; }
+
+.cart-item-plus-button {
+  margin-top: .2em;
+  background-color: #f0c14b;
+  border-color: #a88734 #9c7e31 #846a29;
+  color: #111;
+  width: 2em;
+  font-family: "Amazon Ember", Arial, sans-serif;
+  font-size: 1.2em;
+  border-radius: .2em;
+  margin-bottom: .2em; }
+
 .departments-to-display button {
   width: 90%;
   margin-top: .2em;
@@ -122,7 +202,8 @@ table {
   height: 2em;
   font-family: "Amazon Ember", Arial, sans-serif;
   font-size: 1.2em;
-  border-radius: .2em; }
+  border-radius: .2em;
+  margin-bottom: .2em; }
 
 .header-parent {
   font-family: "Amazon Ember", Arial, sans-serif;

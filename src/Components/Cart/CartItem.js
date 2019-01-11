@@ -11,15 +11,15 @@ class CartItem extends Component{
         let {updateCartQuantity,quantityPlusOne,quantityMinusOne,deleteFromCart} = this.props
         // console.log({quantity})
         return(
-            <div className='cart-users-cart' key={id}>
-                    <div>{description}</div>
+            <div className='searchpage-item' key={id}>
+                    <div><h2>{description}</h2></div>
                     <img src={image} />
-                    <div>{additional_details}</div>
-                    <div>{quantity}</div>
+                    <div><h2>{additional_details}</h2></div>
+                    <div><h4>{quantity}</h4></div>
                     <button className='cart-item-plus-button' value={quantity} onClick={(event)=>quantityPlusOne(id,event.target.value)}>+</button>
                     <button type='number' min='1' className='cart-item-minus-button' value={quantity} onClick={(event)=>quantityMinusOne(id,event.target.value)}>-</button>
-                    <div>{price}</div>
-                    <div>Item Total: {quantity*price}</div>
+                    <div><h4>${price}</h4></div>
+                    <div><h4>Item Total: ${quantity*price}</h4></div>
                     <button className='cart-item-delete-button' onClick={(event)=>deleteFromCart(id,event.target.value)}>Remove</button>
                     {/* <div>Total:{quantity*price}</div> */}
                 </div>

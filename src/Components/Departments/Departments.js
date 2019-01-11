@@ -45,11 +45,11 @@ class Departments extends Component{
         let displayOneDepartment = this.state.departmentDisplay.map((items,item)=>{
             console.log(items)
             return(
-                <Link to={`/item/${items.id}`} key={item}>
-                    <div className='departments-items'>
-                        {items.description}
-                        {items.price}
+                <Link to={`/item/${items.id}`} key={item} style={{textDecoration:'none'}}>
+                    <div className='searchpage-item'>
                         <img src={items.image} />
+                        <h2>{items.description}</h2>
+                        <h4>${items.price}</h4>
                     </div>
                 </Link>
             )

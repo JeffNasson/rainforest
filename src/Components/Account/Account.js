@@ -38,13 +38,18 @@ class Account extends Component{
                 {
                     customer.id ? (
                         <div className='account-customer-truthy'>
-                            <p>{customer.firstName}</p>
-                            <p>{customer.lastName}</p>
+                            <div><h4>Username:</h4> <h2>{customer.username}</h2></div>
+                            <div><h4>First Name:</h4> <h2>{customer.firstName}</h2></div>
+                            <div><h4>Last Name:</h4> <h2>{customer.lastName}</h2></div>
+                            <div><h4>Email:</h4> <h2>{customer.email}</h2></div>
+                            <div><h4>Phone:</h4> <h2>{customer.phone}</h2></div>
+                            <div><h4>City:</h4> <h2>{customer.city}</h2></div>
+                            <div><h4>Zip:</h4> <h2>{customer.zipcode}</h2></div>
                             <button onClick={this.logout}>Logout</button>
                         </div>
                     ) : (
                         <div className='account-customer-falsy'>
-                            <p>You are not currently logged in</p>
+                            <h2>You are not currently logged in</h2>
                             <Link to='/auth'><button>Login</button></Link>
                         </div>
                     )

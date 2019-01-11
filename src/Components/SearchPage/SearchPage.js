@@ -57,7 +57,17 @@ class SearchPage extends Component{
                 <Header />
                 <Searchbar />
                 <SubHeader />
-                {displayItems}
+                {
+                    this.state.items==0 ?(
+                        <div className='searchpage-item'>
+                            <h2>No items matched your search. Please try again.</h2>
+                        </div>
+                    ):(
+                        <div>
+                        {displayItems}
+                        </div>
+                    )
+                }
             </div>
         )
     }

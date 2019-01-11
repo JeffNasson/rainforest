@@ -148,7 +148,7 @@ module.exports = {
             const isInCart = await db.select_cart([user.id,itemId])
             if(isInCart){
                 let cart = await db.minus_one([Number(newQuantity),itemId,user.id])
-                if(newQuantity<=0){
+                if(newQuantity<2){
                     let deleteFromCart = await db.delete_item(itemId,user.id)
                     res.status(200).send(deleteFromCart)
                 } else {
@@ -223,6 +223,16 @@ module.exports = {
             res.status(401).send(console.log('checkout failed'))
         }
     },
-    completedOrders:(req,res)=>{},
+    completedOrders:async (req,res)=>{
+        const db=req.app.get('db')
+        const user = req.session.user
+
+        if(user){
+            let orders = await db.get_orders(user.id)
+                res.status(200).send(orders)
+        } else {
+            res.status(401).send(console.log('No orders found for this user'))
+        }
+    },
     //end checkout, orders
 }

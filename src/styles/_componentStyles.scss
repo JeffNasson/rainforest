@@ -11,6 +11,54 @@
 //END GLOBAL VARIABLES
 
 //BEGIN ACCOUNT
+.account-customer-truthy div{
+    display: flex;
+    justify-content: center;
+    padding-top: .4em;
+    padding-bottom: .3em;
+}
+.account-customer-truthy h2{
+    padding-left: .3em;
+    color:$color-black;
+    font-weight: 600;
+    font-size: 1.3em;
+}
+.account-customer-truthy h4{
+    font-weight: 500;
+    color: $color-dark-grey;
+    font-size: 1.3em;
+}
+.account-customer-truthy button{
+    width: 70%;
+    margin-top: .2em;
+    background-color: $color-yellow;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: $button-black;
+    height: 2em;
+    font-family: $font-amz;
+    font-size: 1.2em;
+    border-radius: .2em;
+}
+
+.account-customer-falsy button{
+    width: 70%;
+    margin-top: .2em;
+    background-color: $color-yellow;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: $button-black;
+    height: 2em;
+    font-family: $font-amz;
+    font-size: 1.2em;
+    border-radius: .2em;
+}
+.account-customer-falsy h2{
+    padding-left: .3em;
+    color:$color-black;
+    font-weight: 600;
+    font-size: 1.3em;
+    padding-top: .4em;
+    padding-bottom: .3em;
+}
 //END ACCOUNT
 
 //BEGIN AUTH
@@ -81,6 +129,39 @@
 //END AUTH
 
 //BEGIN CART
+.searchpage-item button{
+    margin-top: .2em;
+    background-color: $color-yellow;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: $button-black;
+    height: 2em;
+    font-family: $font-amz;
+    font-size: 1.2em;
+    border-radius: .2em;
+    margin-bottom: .2em;
+}
+.cart-item-minus-button{
+    margin-top: .2em;
+    background-color: $color-yellow;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: $button-black;
+    width: 2em;
+    font-family: $font-amz;
+    font-size: 1.2em;
+    border-radius: .2em;
+    margin-bottom: .2em;
+}
+.cart-item-plus-button{
+    margin-top: .2em;
+    background-color: $color-yellow;
+    border-color: #a88734 #9c7e31 #846a29;
+    color: $button-black;
+    width: 2em;
+    font-family: $font-amz;
+    font-size: 1.2em;
+    border-radius: .2em;
+    margin-bottom: .2em;
+}
 //END CART
 
 //BEGIN CHECKOUT
@@ -97,6 +178,7 @@
     font-family: $font-amz;
     font-size: 1.2em;
     border-radius: .2em;
+    margin-bottom: .2em;
 }
 //END DEPARTMENTS
 
@@ -269,6 +351,8 @@
 //END ITEM
 
 //BEGIN ORDERS
+
+
 //END ORDERS
 
 //BEGIN REGISTER

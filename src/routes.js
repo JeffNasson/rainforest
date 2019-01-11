@@ -11,6 +11,7 @@ import Cart from './Components/Cart/Cart.js';
 import Checkout from './Components/Checkout/Checkout.js';
 import SearchPage from './Components/SearchPage/SearchPage.js';
 import Products from './Components/Products/Products.js';
+import Orders from './Components/Orders/Orders.js';
 
 export default(
     <Switch>
@@ -24,5 +25,6 @@ export default(
         <Route path='/checkout' component={Checkout} />
         <Route path='/search' component={SearchPage} />
         <Route path='/departments/:id' component={Products} />
+        <Route path='/orders' component={Orders} />
     </Switch>
 )
