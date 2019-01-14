@@ -31,6 +31,12 @@ class Cart extends Component{
                  this.setState({total:res.data[0].total_price})
              })
     }
+    componentDidUpdate(){
+        axios.get(`/api/cart/total`)
+        .then(res=>{
+            this.setState({total:res.data[0].total_price})
+        })
+    }
 
     updateCartQuantity(itemId,newQuantity){
         axios.put(`/api/cart/${itemId}/${newQuantity}`)

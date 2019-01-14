@@ -505,7 +505,8 @@ table {
   .display-cart-parent {
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around; }
+    justify-content: space-around;
+    padding: 1em; }
   .departments-to-display-parent {
     display: flex;
     flex-flow: wrap;

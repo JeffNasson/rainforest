@@ -67,6 +67,9 @@ export default class Checkout extends Component{
             <Header />
             <Searchbar />
             <SubHeader />
+            <div className='display-cart-parent'>
+                {displayCart}
+            </div>
             <StripeCheckout
             amount={this.state.total*100}
             // billingAddress
@@ -78,9 +81,6 @@ export default class Checkout extends Component{
             token={this.onToken}
             zipCode
             />
-            <div className='display-cart-parent'>
-                {displayCart}
-            </div>
         </div>
     )
   }
