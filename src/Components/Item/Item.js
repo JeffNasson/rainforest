@@ -29,7 +29,7 @@ class Item extends Component{
         let id = this.props.match.params.id
         axios.post(`/api/cart/${id}/${quantity}`)
              .then(res=>{
-                 if(res.status==200){
+                 if(res.status!==401){
                      this.setState({cart:res.data})
                     } else {
                         alert('Not logged in, sending you to login.')

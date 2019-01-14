@@ -78,7 +78,9 @@ export default class Checkout extends Component{
             token={this.onToken}
             zipCode
             />
-            {displayCart}
+            <div className='display-cart-parent'>
+                {displayCart}
+            </div>
         </div>
     )
   }

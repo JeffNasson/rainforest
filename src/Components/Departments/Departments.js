@@ -34,7 +34,7 @@ class Departments extends Component{
         let departmentsToDisplay = this.state.departments.map((departments,i)=>{
             console.log(departments)
             return(
-                <Link to={`/departments/${departments.department_name}`} key={i}>
+                <Link to={`/departments/${departments.department_name}`} style={{textDecoration:'none'}} key={i}>
                 <div className='departments-to-display' key={i}>
                     <button onClick={()=>this.displayDepartment(departments.id)}>{departments.department_name}</button>
                 </div>
@@ -64,8 +64,12 @@ class Departments extends Component{
                     <h1>Departments</h1>
                     <hr />
                 </div>
+                <div className='departments-to-display-parent'>
                 {departmentsToDisplay}
+                </div>
+                <div className='display-one-department-parent'>
                 {displayOneDepartment}
+                </div>
             </div>
         )
     }

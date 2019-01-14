@@ -30,8 +30,10 @@ class Header extends Component{
     logout(){
         axios.post('/api/logout')
              .then(res=>{
+                 console.log(this.props)
                  this.props.updateCustomer({})
-                 this.props.history.push('/')
+                //  this.props.history.push('/')
+                window.location.assign('/')
              })
     }
 
@@ -65,9 +67,20 @@ class Header extends Component{
                                    <Link to='/orders'><button>Orders</button></Link>
                                 </div>
                                 <div className='header-slide-content-body'>
-                                    <Link to='/'><button>Home</button></Link>
-                                    <Link to='/departments'><button>Departments</button></Link>
-                                    <button onClick={this.logout}>Logout</button>
+                                    {
+                                        customer.id ?(
+                                        <div className='header-slide-content-body'>
+                                            <Link to='/'><button>Home</button></Link>
+                                            <Link to='/departments'><button>Departments</button></Link>
+                                            <button onClick={this.toggleMenu&&this.logout}>Logout</button>
+                                        </div>
+                                        ):(
+                                        <div className='header-slide-content-body'>
+                                            <Link to='/'><button>Home</button></Link>
+                                            <Link to='/departments'><button>Departments</button></Link>
+                                        </div>
+                                        ) 
+                                    }
                                 </div>
                             </div>
                         </div>
@@ -85,8 +98,8 @@ class Header extends Component{
                                         <h5>Hello, </h5> <h3> {customer.firstName}</h3>
                                   </div>
                             ) : (
-                                <div>
-                                   <Link to='/auth'><button>Login</button></Link>
+                                <div className='header-login-button-h1'>
+                                   <Link to='/auth'><button><h1>Login</h1></button></Link>
                                 </div>
                             )
                         }

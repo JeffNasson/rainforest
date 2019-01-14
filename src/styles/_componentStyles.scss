@@ -1,3 +1,4 @@
+@media(max-width:799px){
 //GLOBAL VARIABLES
 .flex{
     display: flex;
@@ -229,6 +230,10 @@
 .header-user-first-name h5{
     font-weight: 300;
 }
+.header-login-button-h1 h1{
+    font-size: 1.5em;
+    font-weight: 400;
+}
 
 .header-slide-menu{
     width: 90%;
@@ -284,11 +289,12 @@
 }
 
 .header-slide-content-body{
-    height: 15em;
+    height: 10em;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    background-color: whitesmoke;
 }
 
 .header-slide-content-body button{
@@ -392,7 +398,7 @@
 }
 
 .searchbar-input{
-    height:1.8em;
+    height:2em;
     width:80%;
     border: .1rem solid #a6a6a6;
     border-top-color: #949494;
@@ -401,12 +407,12 @@
 }
 
 .searchbar-input-button img{
-    height:1.5em;
-    width:1.5em;
+    height:1.6em;
+    // width:1.5em;
     background-color: $color-yellow;
     border: .1rem solid #a88734 #9c7e31 #846a29;
     border-top-color: #949494;
-    border-radius: .1rem;
+    border-radius: .2rem;
 }
 //END SEARCHBAR
 
@@ -423,6 +429,7 @@
 .searchpage-item h2{
     color:$color-black;
     font-weight: 550;
+    padding-bottom: .4em;
 }
 .searchpage-item h4{
     color: $color-red;
@@ -444,3 +451,6 @@
     height:2em;
 }
 //END SUBHEADER
+}
+
+

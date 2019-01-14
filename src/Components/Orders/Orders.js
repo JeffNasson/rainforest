@@ -48,7 +48,7 @@ class Orders extends Component{
                             <h2>It looks like you haven't ordered anything yet!</h2>
                         </div>
                     ):(
-                        <div className='searchpage-item'>
+                        <div className='searchpage-item display-cart-parent'>
                             {displayOrders}
                         </div>
                     )

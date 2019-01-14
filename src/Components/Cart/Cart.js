@@ -83,12 +83,13 @@ class Cart extends Component{
                     <h1>Cart</h1>
                     <hr />
                 </div>
-
+                <div className='display-cart-parent'>
                 {displayCart}
+                </div>
                 {
                     this.state.cart==0 ?(
                         <div className='searchpage-item'>
-                            <h2>Oops its like your cart is empty! Log in and get to shopping!</h2>
+                            <h2>Oops it looks like your cart is empty! Log in and get to shopping!</h2>
                         </div>
                     ):(
                         <div className='searchpage-item'>

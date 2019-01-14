@@ -1,0 +1,499 @@
+@media(min-width:800px){
+    //GLOBAL VARIABLES
+    .flex{
+        display: flex;
+        flex-direction: row;
+        padding-left: .2em;
+    }
+    .body{
+        font-family: $font-amz;
+    }
+    
+    //END GLOBAL VARIABLES
+    
+    //BEGIN ACCOUNT
+    .account-customer-truthy div{
+        display: flex;
+        justify-content: center;
+        padding-top: .4em;
+        padding-bottom: .3em;
+    }
+    .account-customer-truthy h2{
+        padding-left: .3em;
+        color:$color-black;
+        font-weight: 600;
+        font-size: 1.3em;
+    }
+    .account-customer-truthy h4{
+        font-weight: 500;
+        color: $color-dark-grey;
+        font-size: 1.3em;
+    }
+    .account-customer-truthy button{
+        width: 70%;
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+    }
+    
+    .account-customer-falsy button{
+        width: 70%;
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+    }
+    .account-customer-falsy h2{
+        padding-left: .3em;
+        color:$color-black;
+        font-weight: 600;
+        font-size: 1.3em;
+        padding-top: .4em;
+        padding-bottom: .3em;
+    }
+    //END ACCOUNT
+    
+    //BEGIN AUTH
+    .auth-h1-hr h1{
+        color: $color-dark-grey;
+        display: flex;
+        justify-content: flex-start;
+        padding-bottom: .5em;
+        padding-top: .5em;
+        padding-left: 1em;
+        font-size: 1.5em;
+    }
+    .auth-h1-hr hr{
+        width: 90%;
+        height: .1rem;
+        background-color: transparent;
+        border-top: .1rem solid #e7e7e7;
+        margin-bottom: 1.3rem;
+    }
+    
+    .auth-inputs{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 1em;
+    }
+    .auth-inputs input{
+        margin-top: 1em;
+        width: 90%;
+        font-size: 1.5em;
+    }
+    .auth-username{
+        border: .1rem solid #a6a6a6;
+        border-top-color: #949494;
+        border-radius: .3rem;
+        box-shadow: 0 0.1rem 0 rgba(255,255,255,.5), 0 0.1rem 0 rgba(0,0,0,.07) inset;
+        outline: 0;
+    }
+    .auth-password{
+        border: .1rem solid #a6a6a6;
+        border-top-color: #949494;
+        border-radius: .3rem;
+        box-shadow: 0 0.1rem 0 rgba(255,255,255,.5), 0 0.1rem 0 rgba(0,0,0,.07) inset;
+        outline: 0;
+    }
+    
+    .auth-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .auth-buttons button{
+        width: 90%;
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+    }
+    
+    .auth-login-button{}
+    
+    
+    //END AUTH
+    
+    //BEGIN CART
+    .searchpage-item button{
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+        margin-bottom: .2em;
+    }
+    .cart-item-minus-button{
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        width: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+        margin-bottom: .2em;
+    }
+    .cart-item-plus-button{
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        width: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+        margin-bottom: .2em;
+    }
+    .display-cart-parent{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+    //END CART
+    
+    //BEGIN CHECKOUT
+    //END CHECKOUT
+    
+    //BEGIN DEPARTMENTS
+    .departments-to-display-parent{
+        display: flex;
+        flex-flow: wrap;
+        flex-direction: row;
+        justify-content:  space-around;
+    }
+    .departments-to-display button{
+        width: 8em;
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .2em;
+        margin-bottom: .2em;
+    }
+    .display-one-department-parent{
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-around;
+        margin-top: 1em;
+        padding-left: 1em;
+        padding-right: 1em;
+    }
+    //END DEPARTMENTS
+    
+    //BEGIN HEADER
+    // 1em=16px
+    .header-parent{
+        font-family: $font-amz;
+        height:4em;
+        width:100%;
+        background-color: $color-black;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        padding: .25em;
+    }
+    .header-parent img{
+        height: 1.5em;
+        width: 1.5em;
+    }
+    .header-ham-site{
+        display: flex;
+        align-items: center;
+        color: white;
+        font-size:1.5em;
+    }
+    .header-ham-menu{
+        color:white;
+    }
+    .header-site{
+        padding-left: 1em;
+    }
+    
+    .header-user-first-cart{
+        display: flex;
+        align-items: center;
+        font-size:1.5em;
+    }
+    .header-user-first-name{
+        color: white;
+        display: inline-flex;
+        padding-right:1em;
+    }
+    .header-user-first-name button{
+        border:0;
+        background:none;
+        color: white;
+    }
+    .header-user-first-name h5{
+        font-weight: 300;
+    }
+    .header-login-button-h1 h1{
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+    
+    .header-slide-menu{
+        width: 90%;
+        height: 70%;
+        background: whitesmoke;
+        position: absolute;
+        top: 0;
+        left: -90%;
+        transition: .65s;
+    }
+    
+    .header-slide-content-top{
+        display: flex;
+        justify-content: space-between;
+        padding-left:1em;
+        padding-right: 1em;
+        padding-bottom: .4em;
+        background-color: $color-black;
+        font-size: 1em;
+        padding-top:.4em;
+    }
+    .header-slide-content-top h5{
+        font-weight: 300;
+    }
+    
+    .header-slide-content-top button{
+        border:0;
+        background:none;
+        color: white;
+        font-size:.75em;
+        font-weight:300;
+    }
+    
+    .header-slide-content-top-buttons{
+        background-color: $color-black;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom:.5em;
+    }
+    
+    .header-slide-content-top-buttons button{
+        border:0;
+        background-color:$color-dark-grey;
+        color: white;
+        height:3em;
+        width:6em;
+        font-size:1rem;
+        font-weight:700;
+    }
+    
+    .header-slide-animation{
+        left: 0;
+    }
+    
+    .header-slide-content-body{
+        height: 10em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        background-color: whitesmoke;
+    }
+    
+    .header-slide-content-body button{
+        height:4em;
+        width:8em;
+        border:0;
+        background-color:whitesmoke;
+        font-size:1.1rem;
+        font-weight:700;
+        color: $color-dark-grey;
+        outline:none;
+    }
+    //END HEADER
+    
+    //BEGIN HOME
+    .home-parent h6{
+        padding-bottom: 2em;
+        padding-top:.5em;
+    }
+    .home-parent{
+        width: 100%;
+    }
+    .home-searchpage-item{
+        display: flex;
+        flex-flow: wrap;
+        justify-content: space-around;
+    }
+    //END HOME
+    
+    //BEGIN ITEM
+    .item-parent{
+        font-family: $font-amz;
+    }
+    .item-display{
+        font-family: $font-amz;
+    }
+    .item-display div{
+        padding-bottom:.5em;
+    }
+    .item-display h2{}
+    .item-display h3{}
+    .item-display h4{
+        color: $color-red;
+    }
+    .add-to-cart{
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        width:85%;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+    }
+    .item-checkout-button{
+        margin-top: .2em;
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        width:85%;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+    }
+    .item-display img{
+        width: 11em;
+        padding-bottom: .5em;
+    }
+    //END ITEM
+    
+    //BEGIN ORDERS
+    
+    
+    //END ORDERS
+    
+    //BEGIN REGISTER
+    .register-inputs input{
+        border: .1rem solid #a6a6a6;
+        border-top-color: #949494;
+        border-radius: .3rem;
+        box-shadow: 0 0.1rem 0 rgba(255,255,255,.5), 0 0.1rem 0 rgba(0,0,0,.07) inset;
+        outline: 0;
+        margin-top: 1em;
+        font-size: 1.5em;
+    }
+    .register-register-button{
+        background-color: $color-yellow;
+        border-color: #a88734 #9c7e31 #846a29;
+        color: $button-black;
+        width:80%;
+        height: 2em;
+        font-family: $font-amz;
+        font-size: 1.2em;
+        border-radius: .3em;
+        margin-top: .5em;
+    }
+    //END REGISTER
+    
+    //BEGIN SEARCHBAR
+    .searchbar-parent{
+        font-family: $font-amz;
+        height:2em;
+        width: 100%;
+        background-color: $color-black;
+    }
+    .searchbar-input-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .searchbar-input{
+        height:2em;
+        width:80%;
+        border: .1rem solid #a6a6a6;
+        border-top-color: #949494;
+        border-radius: .3rem;
+        
+    }
+    
+    .searchbar-input-button img{
+        height:1.6em;
+        // width:1.5em;
+        background-color: $color-yellow;
+        border: .1rem solid #a88734 #9c7e31 #846a29;
+        border-top-color: #949494;
+        border-radius: .2rem;
+    }
+    //END SEARCHBAR
+    
+    //BEGIN SEARCHPAGE
+    .searchpage-item{
+        padding-bottom: 2em;
+        text-decoration: none;
+        text-underline-position: unset;
+        font-family: $font-amz;
+    }
+    .searchpage-item img{
+        width: 12em;
+    }
+    .searchpage-item h2{
+        color:$color-black;
+        font-weight: 550;
+        padding-bottom: .4em;
+    }
+    .searchpage-item h4{
+        color: $color-red;
+    }
+    //END SEARCHPAGE
+    
+    //BEGIN SUBHEADER
+    .subheader-parent{
+        height:2em;
+        width: 100%;
+        background-color: $color-dark-grey;
+        display: flex;
+        color: white;
+        font-size: .75em;
+        align-items: center;
+        font-family: $font-amz;
+    }
+    .subheader-parent img{
+        height:2em;
+    }
+    //END SUBHEADER
+    
+    //EXPLICIT DESKTOP STYLES
+    .searchpage-item img{
+        height:15em;
+    }
+    .searchpage-item{
+        margin-right: 1em;
+        margin-left: 1em;
+    }
+    //END EXPLICIT DESKTOP STYLES
+
+
+
+
+    }
+    
+    
+    

@@ -38,7 +38,9 @@ class Home extends Component{
                 <Searchbar />
                 <SubHeader />
                 <h6>Todays Hot Deals!</h6>
+                <div className='home-searchpage-item'>
                 {displayItems}
+                </div>
             </div>
         )
     }
